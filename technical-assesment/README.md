@@ -77,6 +77,7 @@ By design, this assessment contains more work than you will be able to complete 
  - [ ]Replace the sample data in your client with data obtained from your server.
 
     **WHEN THIS STEP IS COMPLETE:** please make a commit with the message "complete step two"
+    
 
 Note: You can replace menuItems with the name of your own menu items data.
 PS: Take into consideration that the ingredient are a string with many ingredient seprated by commas (.split(","))

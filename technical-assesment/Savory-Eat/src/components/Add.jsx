@@ -1,7 +1,53 @@
 import React from "react";
+import { useState } from "react";
+import App from "../App.jsx"
 import "../App.css";
 
 const Add = () => {
+  const [name,setName]=useState('')
+  const [Cook_Time,setCook_Time]=useState(0)
+  const [Prep_Time,setPrep_Time]=useState('')
+  const [recepie_Description,setrecepie_Description]=useState('')
+  const[recepie_Ingredients,setrecepie_Ingredients]=useState('')
+  const[Categorie,setCategorie]=useState('')
+  const [Servers,setServers]=useState('')
+  const [image,setimage]=useState('')
+  const [recepie,setRecepie]=useState([])
+  
+  const display=()=>{
+    console.log(name)
+    var object={
+      name:name,
+        Cook_time:Cook_time,
+        Prep_time: Prep_Time,
+        recepie_description: recepie_description,
+        recepie_ingredients: recepie_ingredients,
+        categorie:categorie,
+        servers:servers,
+        image:image
+    }
+    console.log(obj)
+  
+    axios.post('http://localhost:4000/api/recepies', object)
+    .then(()=>{
+      setRecepie([...recepie,{
+        name:name,
+        Cook_time:Cook_time,
+        Prep_time: Prep_Time,
+        recepie_description: recepie_description,
+        recepie_ingredients: recepie_ingredients,
+        categorie:categorie,
+        servers:servers,
+        image:image
+      }])
+  
+    })
+  
+  }
+  
+
+
+
   return (
     <div className="add-recipe-form ">
       <div className="form-group">

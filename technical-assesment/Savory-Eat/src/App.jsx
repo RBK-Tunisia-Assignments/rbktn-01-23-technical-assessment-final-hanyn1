@@ -3,11 +3,19 @@ import React ,{useState}from "react";
 import "./App.css";
 import Home from "./components/Home.jsx";
 import AllRecepies from "./components/AllRecipies.jsx"
+import Add from "./components/Add";
+import axios from 'axios';
+
+
 function App() {
+
 const [view,setView]=useState('Home')
+
+
   let changeView = (view) => {
     setView(view);
   };
+  
   return (
     <div className="App">
       <nav className="nav">
@@ -42,9 +50,19 @@ const [view,setView]=useState('Home')
       {view === "Home" && <Home changeView={changeView}/>}
       {view === "Allrecepies" && <AllRecepies />}
      
-      <div></div>
+      <div>
+        <button onClick={display()}>Add</button>
+      </div>
+
+      <div>
+    <button onClick={fetchData}>See All employee</button><br/>
+    {showRecepie ?  <AllRecepies recepie={recepie}/>:null}
+    </div>
     </div>
   );
 }
 
 export default App;
+
+
+
