@@ -55,7 +55,7 @@ const [view,setView]=useState('Home')
       </div>
 
       <div>
-    <button onClick={fetchData}>See All employee</button><br/>
+    <button onClick={fetchData}>See All recepies</button><br/>
     {showRecepie ?  <AllRecepies recepie={recepie}/>:null}
     </div>
     </div>

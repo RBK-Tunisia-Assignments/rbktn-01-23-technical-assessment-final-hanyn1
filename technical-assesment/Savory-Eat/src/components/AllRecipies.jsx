@@ -11,7 +11,7 @@ const AllRecepies = (props) => {
   const [showRecepie,setShowRecepie]=useState(false)
 
   function fetchData() {
-    axios.get("http://localhost:5000/api/recepies")
+    axios.get("http://localhost:4000/api/recepies")
       .then((res) => { 
         setRecepie(res.data);
         setShowRecepie(!showRecepie);
